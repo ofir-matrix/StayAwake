@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(250, 100)
+        MainWindow.resize(250, 130)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed
         )
@@ -22,8 +22,8 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
-        MainWindow.setMinimumSize(QtCore.QSize(250, 100))
-        MainWindow.setMaximumSize(QtCore.QSize(250, 100))
+        MainWindow.setMinimumSize(QtCore.QSize(250, 130))
+        MainWindow.setMaximumSize(QtCore.QSize(250, 130))
         MainWindow.setAutoFillBackground(False)
         MainWindow.setStyleSheet("border-color: rgb(0, 255, 8);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -43,6 +43,9 @@ class Ui_MainWindow(object):
         self.toggle.setChecked(False)
         self.toggle.setObjectName("toggle")
         self.gridLayout.addWidget(self.toggle, 2, 0, 1, 3)
+        self.autostart_checkbox = QtWidgets.QCheckBox(self.centralwidget)
+        self.autostart_checkbox.setObjectName("autostart_checkbox")
+        self.gridLayout.addWidget(self.autostart_checkbox, 3, 0, 1, 3)
         self.label = QtWidgets.QLabel(self.centralwidget)
         font = QtGui.QFont()
         font.setPointSize(12)
@@ -63,6 +66,7 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Stay Awake"))
         self.toggle.setText(_translate("MainWindow", "Start"))
+        self.autostart_checkbox.setText(_translate("MainWindow", "Start with Windows"))
         self.label.setText(_translate("MainWindow", "Stay Awake"))
 
 
